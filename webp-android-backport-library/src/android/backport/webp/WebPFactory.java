@@ -22,12 +22,4 @@ public final class WebPFactory {
 	 */
 	public static native Bitmap nativeDecodeByteArray(byte[] data, BitmapFactory.Options options);
 	
-	/**
-	 * Encodes bitmap into byte array
-	 * @param bitmap Bitmap
-	 * @param quality Quality, should be between 0 and 100
-	 * @return Encoded byte array
-	 */
-	public static native byte[] nativeEncodeBitmap(Bitmap bitmap, int quality);
-	
 }

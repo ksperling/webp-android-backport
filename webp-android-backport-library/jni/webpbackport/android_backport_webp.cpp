@@ -86,6 +86,11 @@ jclass_BitmapFactory::jclass_Options::jclass_Options(JNIEnv* jniEnv)
 		"outWidth",
 		"I");
 	assert(outWidth);
+
+	inSampleSize = jniEnv->GetFieldID(jclassRef,
+		"inSampleSize",
+		"I");
+	assert(inSampleSize);
 }
 
 } // namespace graphics
@@ -109,8 +114,6 @@ JNIEXPORT jint JNICALL JNI_OnLoad
 	jrefs::java::lang::RuntimeException = new jrefs::java::lang::jclass_RuntimeException(jniEnv);
 	jrefs::android::graphics::Bitmap = new jrefs::android::graphics::jclass_Bitmap(jniEnv);
 	jrefs::android::graphics::BitmapFactory = new jrefs::android::graphics::jclass_BitmapFactory(jniEnv);
-
-	__android_log_print(ANDROID_LOG_INFO, LOG_TAG, "JNI_OnLoad completed");
 
 	return JNI_VERSION_1_6;
 }

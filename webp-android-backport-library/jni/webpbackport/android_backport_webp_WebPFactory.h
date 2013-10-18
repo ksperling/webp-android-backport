@@ -15,14 +15,6 @@ extern "C" {
 JNIEXPORT jobject JNICALL Java_android_backport_webp_WebPFactory_nativeDecodeByteArray
   (JNIEnv *, jclass, jbyteArray, jobject);
 
-/*
- * Class:     android_backport_webp_WebPFactory
- * Method:    nativeEncodeBitmap
- * Signature: (Landroid/graphics/Bitmap;I)[B
- */
-JNIEXPORT jbyteArray JNICALL Java_android_backport_webp_WebPFactory_nativeEncodeBitmap
-  (JNIEnv *, jclass, jobject, jint quality);
-
 #ifdef __cplusplus
 }
 #endif

@@ -80,6 +80,9 @@ struct jclass_BitmapFactory {
 
 		// int http://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#outWidth
 		jfieldID outWidth;
+
+		// int http://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#inSampleSize
+		jfieldID inSampleSize;
 	} Options;
 };
 extern jclass_BitmapFactory* BitmapFactory;
