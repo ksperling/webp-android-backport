@@ -122,7 +122,7 @@ public class SampleActivity extends Activity {
 					selectedBitmap = BitmapFactory.decodeFileDescriptor(imageSource);
 				}
 
-				byte[] webpImageData = WebPFactory.nativeEncodeBitmap(selectedBitmap, 100);
+				byte[] webpImageData = null; //WebPFactory.nativeEncodeBitmap(selectedBitmap, 100);
 				try {
 					FileOutputStream dumpStream = new FileOutputStream(new File(Environment.getExternalStorageDirectory(), "dump.webp"));
 					dumpStream.write(webpImageData);
@@ -139,7 +139,7 @@ public class SampleActivity extends Activity {
 		case REQUEST_CODE__IMAGE_CAPTURED:
 			if (resultCode == RESULT_OK) {
 				Bitmap selectedBitmap = BitmapFactory.decodeFile(_captureDestination.getAbsolutePath());
-				byte[] webpImageData = WebPFactory.nativeEncodeBitmap(selectedBitmap, 100);
+				byte[] webpImageData = null; //WebPFactory.nativeEncodeBitmap(selectedBitmap, 100);
 				try {
 					FileOutputStream dumpStream = new FileOutputStream(new File(Environment.getExternalStorageDirectory(), "dump.webp"));
 					dumpStream.write(webpImageData);
