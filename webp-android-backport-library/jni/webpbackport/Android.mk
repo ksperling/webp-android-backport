@@ -14,6 +14,6 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_STATIC_LIBRARIES := webp
 
-LOCAL_LDLIBS := -llog -ljnigraphics
+LOCAL_LDLIBS := -llog -ljnigraphics -landroid
 
 include $(BUILD_SHARED_LIBRARY)

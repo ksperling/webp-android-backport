@@ -37,6 +37,18 @@ struct jclass_RuntimeException {
 extern jclass_RuntimeException* RuntimeException;
 
 } // namespace lang
+
+namespace io {
+
+struct jclass_FileNotFoundException {
+	jclass_FileNotFoundException(JNIEnv* jniEnv);
+
+	// http://developer.android.com/reference/java/lang/FileNotFoundException.html
+	jclass jclassRef;
+};
+extern jclass_FileNotFoundException* FileNotFoundException;
+
+} // namespace io
 } // namespace java
 
 namespace android {

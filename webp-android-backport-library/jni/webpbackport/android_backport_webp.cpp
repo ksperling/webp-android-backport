@@ -36,6 +36,16 @@ jclass_RuntimeException::jclass_RuntimeException(JNIEnv* jniEnv)
 jclass_RuntimeException* RuntimeException = 0;
 
 } // namespace lang
+
+namespace io {
+
+jclass_FileNotFoundException::jclass_FileNotFoundException(JNIEnv* jniEnv)
+{
+	jclassRef = FindClassGlobal(jniEnv, "java/io/FileNotFoundException");
+}
+jclass_FileNotFoundException* FileNotFoundException = 0;
+
+} // namespace io
 } // namespace java
 
 namespace android {
@@ -108,6 +118,8 @@ JNIEXPORT jint JNICALL JNI_OnLoad
 	jrefs::java::lang::NullPointerException = new jrefs::java::lang::jclass_NullPointerException(jniEnv);
 	if (jniEnv->ExceptionCheck()) return JNI_ERR;
 	jrefs::java::lang::RuntimeException = new jrefs::java::lang::jclass_RuntimeException(jniEnv);
+	if (jniEnv->ExceptionCheck()) return JNI_ERR;
+	jrefs::java::io::FileNotFoundException = new jrefs::java::io::jclass_FileNotFoundException(jniEnv);
 	if (jniEnv->ExceptionCheck()) return JNI_ERR;
 	jrefs::android::graphics::Bitmap = new jrefs::android::graphics::jclass_Bitmap(jniEnv);
 	if (jniEnv->ExceptionCheck()) return JNI_ERR;
