@@ -3,6 +3,7 @@ package android.backport.webp;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.IOException;
 
@@ -11,8 +12,17 @@ import java.io.IOException;
  * @author Alexey Pelykh
  */
 public final class WebPFactory {
+
+	public static final boolean AVAILABLE;
 	static {
-		System.loadLibrary("webpbackport");
+		boolean available = false;
+		try {
+			System.loadLibrary("webpbackport");
+			available = true;
+		} catch (UnsatisfiedLinkError e) {
+			Log.e("webp-backport", "Failed to load native library", e);
+		}
+		AVAILABLE = available;
 	}
 
 	/**
